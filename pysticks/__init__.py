@@ -6,9 +6,9 @@ Requires: pygame
 
 Copyright (C) Simon D. Levy 2016
 
-This file is part of Hackflight.
+This file is part of PySticks.
 
-Hackflight is free software: you can redistribute it and/or modify
+PySticks is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as 
 published by the Free Software Foundation, either version 3 of the 
 License, or (at your option) any later version.
@@ -18,11 +18,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License 
-along with this code.  If not, see <http:#www.gnu.org/licenses/>.
+along with this PySticks.  If not, see <http:#www.gnu.org/licenses/>.
 '''
 
 import pygame
-import platform
 
 class Controller(object):
 
@@ -123,12 +122,20 @@ class Xbox360(SpringyThrottleController):
 
         return self.joystick.get_axis(self.aux) < -.5
 
+class Playstation(SpringyThrottleController):
+
+    def __init__(self, axes):
+
+        SpringyThrottleController.__init__(self, axes, 7)
+        
+
 controllers = {
     'Controller (Rock Candy Gamepad for Xbox 360)'       : Xbox360((-1,4,-3,0), 2), 
     'Generic X-Box pad'                                  : Xbox360((-1,3,-4,0), 5), 
-    '2In1 USB Joystick'                                  : SpringyThrottleController((-1,2,-3,0), 7),
-    'MY-POWER CO.,LTD. 2In1 USB Joystick'                : SpringyThrottleController((-1,2,-3,0), 7),
-    'Sony Interactive Entertainment Wireless Controller' : SpringyThrottleController((-1,2,-5,0), 7),
+    '2In1 USB Joystick'                                  : Playstation((-1,2,-3,0)),
+    'Wireless Controller'                                : Playstation((-1,2,-3,0)),
+    'MY-POWER CO.,LTD. 2In1 USB Joystick'                : Playstation((-1,2,-3,0)),
+    'Sony Interactive Entertainment Wireless Controller' : Playstation((-1,2,-5,0)),
     'Logitech Extreme 3D'                                : GameController((-2,0,1,3), 0),
     'Logitech Logitech Extreme 3D'                       : GameController((-3,0,-1,2), 0),
     'FrSky Taranis Joystick'                             : RcTransmitter((0,1,2,5), 3),
@@ -152,25 +159,3 @@ def get_controller():
     controller.joystick = joystick
 
     return controller
-
-
-if __name__ == '__main__':
-
-    '''
-    Test
-    '''
-
-    con = get_controller()
-        
-    while True:
-
-        try:
-
-            con.update()
-
-            print('%+2.2f %+2.2f %+2.2f %+2.2f %+2.2f' %
-                 (con.getThrottle(), con.getRoll(), con.getPitch(), con.getYaw(), con.getAux()))
-
-        except KeyboardInterrupt:
-
-            break
