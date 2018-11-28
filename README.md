@@ -1,6 +1,6 @@
 This Python library simplifies the task of flying an actual or simulated aerial
-vehicle, like a quadcopter, using a game controller.  The code automatically
-detects what kind of controller you're using and sets the axes (throttle,
+vehicle, like a quadcopter, using a joystick or game controller.  The code automatically
+detects what kind of device you're using and, for game controllers, sets the axes (throttle,
 aileron/roll, elevator/pitch, rudder/yaw) to the popular
 [Mode 2](http://www.spektrumrc.com/Articles/Article.aspx?ArticleID=2105)
 configuration.  The right trigger is used for toggling the auxiliary channel.
