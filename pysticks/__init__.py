@@ -60,7 +60,7 @@ class Controller(object):
             val = 0
         return (-1 if j<0 else +1) * val
 
-class GameController(Controller):
+class _GameController(Controller):
 
     def __init__(self, axis_map, button_id):
 
@@ -83,23 +83,23 @@ class GameController(Controller):
             self.button_is_down = False
         return self.switch_value
 
-class SpringyThrottleController(GameController):
+class _SpringyThrottleController(_GameController):
 
     THROTTLE_SCALE = .01
     
     def __init__(self, axis_map, button_id):
 
-        GameController.__init__(self, axis_map, button_id)
+        _GameController.__init__(self, axis_map, button_id)
         
         self.throttleval = -1
 
     def getThrottle(self):
 
-        self.throttleval = min(max(self.throttleval+self._getAxis(0)*SpringyThrottleController.THROTTLE_SCALE, -1), +1)
+        self.throttleval = min(max(self.throttleval+self._getAxis(0)*_SpringyThrottleController.THROTTLE_SCALE, -1), +1)
 
         return self.throttleval
 
-class RcTransmitter(Controller):
+class _RcTransmitter(Controller):
 
     def __init__(self, axis_map, aux_id):
 
@@ -110,11 +110,11 @@ class RcTransmitter(Controller):
 
         return +1 if self.joystick.get_axis(self.aux_id) > 0 else -1
         
-class Xbox360(SpringyThrottleController):
+class _Xbox360(_SpringyThrottleController):
 
     def __init__(self, axes, aux):
 
-        SpringyThrottleController.__init__(self, axes, None)
+        _SpringyThrottleController.__init__(self, axes, None)
 
         self.aux = aux
 
@@ -122,24 +122,24 @@ class Xbox360(SpringyThrottleController):
 
         return self.joystick.get_axis(self.aux) < -.5
 
-class Playstation(SpringyThrottleController):
+class _Playstation(_SpringyThrottleController):
 
     def __init__(self, axes):
 
-        SpringyThrottleController.__init__(self, axes, 7)
+        _SpringyThrottleController.__init__(self, axes, 7)
         
 
 controllers = {
-    'Controller (Rock Candy Gamepad for Xbox 360)'       : Xbox360((-1,4,-3,0), 2), 
-    'Generic X-Box pad'                                  : Xbox360((-1,3,-4,0), 5), 
-    '2In1 USB Joystick'                                  : Playstation((-1,2,-3,0)),
-    'Wireless Controller'                                : Playstation((-1,2,-3,0)),
-    'MY-POWER CO.,LTD. 2In1 USB Joystick'                : Playstation((-1,2,-3,0)),
-    'Sony Interactive Entertainment Wireless Controller' : Playstation((-1,2,-5,0)),
-    'Logitech Extreme 3D'                                : GameController((-2,0,1,3), 0),
-    'Logitech Logitech Extreme 3D'                       : GameController((-3,0,-1,2), 0),
-    'FrSky Taranis Joystick'                             : RcTransmitter((0,1,2,5), 3),
-    'SPEKTRUM RECEIVER'                                  : RcTransmitter((1,2,5,0), 4)
+    'Controller (Rock Candy Gamepad for Xbox 360)'       : _Xbox360((-1,4,-3,0), 2), 
+    'Generic X-Box pad'                                  : _Xbox360((-1,3,-4,0), 5), 
+    '2In1 USB Joystick'                                  : _Playstation((-1,2,-3,0)),
+    'Wireless Controller'                                : _Playstation((-1,2,-3,0)),
+    'MY-POWER CO.,LTD. 2In1 USB Joystick'                : _Playstation((-1,2,-3,0)),
+    'Sony Interactive Entertainment Wireless Controller' : _Playstation((-1,2,-5,0)),
+    'Logitech Extreme 3D'                                : _GameController((-2,0,1,3), 0),
+    'Logitech Logitech Extreme 3D'                       : _GameController((-3,0,-1,2), 0),
+    'FrSky Taranis Joystick'                             : _RcTransmitter((0,1,2,5), 3),
+    'SPEKTRUM RECEIVER'                                  : _RcTransmitter((1,2,5,0), 4)
     }
 
 def get_controller():
