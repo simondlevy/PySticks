@@ -142,7 +142,8 @@ controllers = {
     'Logitech Logitech Extreme 3D'                       : _GameController((-3,0,-1,2), 0),
     'FrSky Taranis Joystick'                             : _RcTransmitter((0,1,2,5), 3),
     'FrSky FrSky Taranis Joystick'                       : _RcTransmitter((0,1,2,3), 5),
-    'SPEKTRUM RECEIVER'                                  : _RcTransmitter((1,2,5,0), 4)
+    'SPEKTRUM RECEIVER'                                  : _RcTransmitter((1,2,5,0), 4),
+    'Horizon Hobby SPEKTRUM RECEIVER'                    : _RcTransmitter((1,2,3,0), 4)
     }
 
 def get_controller():
