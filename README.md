@@ -19,5 +19,5 @@ devices:
 If your controller isn't in this list, you can add a new controller as follows:
 
 1. Run the <b>joyreporter.py</b> script to see the name of your controller and how its axes are mapped on your OS
-2. Add this information as an entry in the <tt>controllers</tt> dictionary in <b>pysticks/__init__.py</b> 
+2. Add this information as an entry in the <tt>controllers</tt> dictionary in <b>pysticks/\_\_init\_\_.py</b> 
 
