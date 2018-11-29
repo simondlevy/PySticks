@@ -133,7 +133,7 @@ class _Playstation(_SpringyThrottleController):
 # need to check OS when setting up the axes.
 controllers = {
     'Controller (Rock Candy Gamepad for Xbox 360)'       : _Xbox360((-1,4,-3,0), 2), 
-    'Generic X-Box pad'                                  : _Xbox360((-1,3,-4,0), 5), 
+    'Rock Candy Gamepad for Xbox 360'                    : _Xbox360((-1,3,-4,0), 5), 
     '2In1 USB Joystick'                                  : _Playstation((-1,2,-3,0)),
     'Wireless Controller'                                : _Playstation((-1,2,-3,0)),
     'MY-POWER CO.,LTD. 2In1 USB Joystick'                : _Playstation((-1,2,-3,0)),
