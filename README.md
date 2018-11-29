@@ -13,3 +13,5 @@ devices:
 * PS4 controller
 * Xbox 360 controller
 * Logitech Extreme 3D Pro joystick
+* Spektrum transmitter with WS1000 wireless simulator dongle
+* FrSky Taranis TX9 RC transmitter with mini USB cable 
