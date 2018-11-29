@@ -129,6 +129,8 @@ class _Playstation(_SpringyThrottleController):
         _SpringyThrottleController.__init__(self, axes, 7)
         
 
+# Different OSs have different names for the same controller, so we don't
+# need to check OS when setting up the axes.
 controllers = {
     'Controller (Rock Candy Gamepad for Xbox 360)'       : _Xbox360((-1,4,-3,0), 2), 
     'Generic X-Box pad'                                  : _Xbox360((-1,3,-4,0), 5), 
@@ -139,6 +141,7 @@ controllers = {
     'Logitech Extreme 3D'                                : _GameController((-2,0,-1,3), 0),
     'Logitech Logitech Extreme 3D'                       : _GameController((-3,0,-1,2), 0),
     'FrSky Taranis Joystick'                             : _RcTransmitter((0,1,2,5), 3),
+    'FrSky FrSky Taranis Joystick'                       : _RcTransmitter((0,1,2,3), 5),
     'SPEKTRUM RECEIVER'                                  : _RcTransmitter((1,2,5,0), 4)
     }
 
