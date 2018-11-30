@@ -31,7 +31,7 @@ while True:
 
         con.update()
 
-        print('%+2.2f %+2.2f %+2.2f %+2.2f %+2.2f' %
+        print('Throttle: %+2.2f   Roll: %+2.2f   Pitch: %+2.2f   Yaw: %+2.2f   Aux: %+2.2f' %
              (con.getThrottle(), con.getRoll(), con.getPitch(), con.getYaw(), con.getAux()))
 
     except KeyboardInterrupt:
