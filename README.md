@@ -8,7 +8,7 @@ Stick values (including the auxiliary) are returned in the interval [-1,+1].
 
 To install the library, run a command (terminal) window, change to the
 <b>PySticks</b> directory and run the command <tt>python3 setup.py install</tt>
-(Windows) or <tt>sudo python3 setup.py install</tt> (Linux).  Then be sure to test
+(Windows) or <tt>sudo python3 setup.py install</tt> (Linux).  You can then test
 your controller by running the <b>tester.py</b> script.
 
 This library has been tested on Windows 10 and Ubuntu 18.04, with the following
