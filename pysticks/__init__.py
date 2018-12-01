@@ -22,6 +22,7 @@ along with this PySticks.  If not, see <http:#www.gnu.org/licenses/>.
 '''
 
 import pygame
+import time
 
 class Controller(object):
 
@@ -85,17 +86,25 @@ class _GameController(Controller):
 
 class _SpringyThrottleController(_GameController):
 
-    THROTTLE_SCALE = .01
-    
     def __init__(self, axis_map, button_id):
 
         _GameController.__init__(self, axis_map, button_id)
         
         self.throttleval = -1
 
+        self.prevtime = 0
+
     def getThrottle(self):
 
-        self.throttleval = min(max(self.throttleval+self._getAxis(0)*_SpringyThrottleController.THROTTLE_SCALE, -1), +1)
+        currtime = time.time()
+
+        # Scale throttle increment by time difference from last update
+        self.throttleval += self._getAxis(0) * (currtime-self.prevtime)
+
+        # Constrain throttle to [-1,+1]
+        self.throttleval = min(max(self.throttleval, -1), +1)
+
+        self.prevtime = currtime
 
         return self.throttleval
 
