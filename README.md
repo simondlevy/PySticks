@@ -6,6 +6,10 @@ aileron/roll, elevator/pitch, rudder/yaw) to the popular
 configuration.  The right trigger is used for toggling the auxiliary channel.
 Stick values (including the auxiliary) are returned in the interval [-1,+1].
 
+To install the library, run a command (terminal) window, change to the
+<b>PySticks</b> directory and run the command <tt>python3 setup.py install</tt>
+(Windows) or <tt>sudo python3 setup.py install</tt> (Linux).
+
 This library has been tested on Windows 10 and Ubuntu 18.04, with the following
 devices:
 
