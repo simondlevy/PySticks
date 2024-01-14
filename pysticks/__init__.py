@@ -111,6 +111,7 @@ class _Playstation(_GameController):
 controllers = {
     'Controller (Rock Candy Gamepad for Xbox 360)'       : _Xbox360((-1,4,-3,0), 2), 
     'Rock Candy Gamepad for Xbox 360'                    : _Xbox360((-1,3,-4,0), 5), 
+    'Logitech Gamepad F310'                              : _GameController((-1,3,-4,0), 5), 
     '2In1 USB Joystick'                                  : _Playstation((-1,2,-3,0)),
     'Wireless Controller'                                : _Playstation((-1,2,-3,0)),
     'SHANWAN Android Gamepad'                            : _Playstation((-1,2,-3,0)),
@@ -123,6 +124,7 @@ controllers = {
     'SPEKTRUM RECEIVER'                                  : _RcTransmitter((1,2,5,0), 4),
     'Horizon Hobby SPEKTRUM RECEIVER'                    : _RcTransmitter((1,2,3,0), 4)
     }
+
 
 def get_controller():
 
