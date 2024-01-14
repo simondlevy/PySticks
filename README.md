@@ -4,8 +4,9 @@ automatically detects what kind of device you're using and, for game
 controllers, sets the axes (throttle, aileron/roll, elevator/pitch, rudder/yaw)
 to the popular
 [Mode 2](https://www.rc-airplane-world.com/rc-transmitter-modes.html)
-configuration.  The right trigger is used for toggling the auxiliary channel.
-Stick values (including the auxiliary) are returned in the interval [-1,+1].
+configuration.  The right shoulder button is used for toggling the auxiliary
+channel.  Stick values (including the auxiliary) are returned in the interval
+[-1,+1].
 
 To install the library, run a command (terminal) window, change to the
 <b>PySticks</b> directory and run the command <tt>pip3 install -e .</tt> You
