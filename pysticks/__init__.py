@@ -145,6 +145,7 @@ controllers = {
     'Rock Candy Gamepad for Xbox 360'                    : _Xbox360((-1,3,-4,0), 5), 
     '2In1 USB Joystick'                                  : _Playstation((-1,2,-3,0)),
     'Wireless Controller'                                : _Playstation((-1,2,-3,0)),
+    'SHANWAN Android Gamepad'                            : _Playstation((-1,2,-3,0)),
     'MY-POWER CO.,LTD. 2In1 USB Joystick'                : _Playstation((-1,2,-3,0)),
     'Sony Interactive Entertainment Wireless Controller' : _Playstation((-1,3,-4,0)),
     'Logitech Extreme 3D'                                : _GameController((-2,0,-1,3), 0),
