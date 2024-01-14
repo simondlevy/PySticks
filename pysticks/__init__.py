@@ -67,8 +67,6 @@ class _GameController(Controller):
 
         Controller.__init__(self, axis_map)
         self.button_id = button_id
-        self.button_is_down = False
-        self.switch_value = -1
 
     def _getAuxValue(self):
 
@@ -76,13 +74,7 @@ class _GameController(Controller):
         
     def getAux(self):
 
-        if self._getAuxValue():
-            if not self.button_is_down:
-                self.switch_value = -self.switch_value
-            self.button_is_down = True
-        else:
-            self.button_is_down = False
-        return self.switch_value
+        return self._getAuxValue()
 
 class _RcTransmitter(Controller):
 
