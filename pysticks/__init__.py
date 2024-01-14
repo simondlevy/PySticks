@@ -109,21 +109,49 @@ class _Playstation(_GameController):
 # Different OSs have different names for the same controller, so we don't
 # need to check OS when setting up the axes.
 controllers = {
-    'Controller (Rock Candy Gamepad for Xbox 360)'       : _Xbox360((-1,4,-3,0), 2), 
-    'Rock Candy Gamepad for Xbox 360'                    : _Xbox360((-1,3,-4,0), 5), 
-    'Logitech Gamepad F310'                              : _GameController((-1,3,-4,0), 5), 
-    '2In1 USB Joystick'                                  : _Playstation((-1,2,-3,0)),
-    'Wireless Controller'                                : _Playstation((-1,2,-3,0)),
-    'SHANWAN Android Gamepad'                            : _Playstation((-1,2,-3,0)),
-    'MY-POWER CO.,LTD. 2In1 USB Joystick'                : _Playstation((-1,2,-3,0)),
-    'Sony Interactive Entertainment Wireless Controller' : _Playstation((-1,3,-4,0)),
-    'Logitech Extreme 3D'                                : _GameController((-2,0,-1,3), 0),
-    'Logitech Logitech Extreme 3D'                       : _GameController((-3,0,-1,2), 0),
-    'FrSky Taranis Joystick'                             : _RcTransmitter((0,1,2,5), 3),
-    'FrSky FrSky Taranis Joystick'                       : _RcTransmitter((0,1,2,3), 5),
-    'SPEKTRUM RECEIVER'                                  : _RcTransmitter((1,2,5,0), 4),
-    'Horizon Hobby SPEKTRUM RECEIVER'                    : _RcTransmitter((1,2,3,0), 4)
-    }
+
+    'Controller (Rock Candy Gamepad for Xbox 360)':
+    _Xbox360((-1,4,-3,0), 2),
+
+    'Rock Candy Gamepad for Xbox 360'
+    : _Xbox360((-1,3,-4,0), 5), 
+
+    'Logitech Gamepad F310'
+    : _GameController((-1,3,-4,0), 5),
+
+    '2In1 USB Joystick'
+    : _Playstation((-1,2,-3,0)),
+
+    'Wireless Controller'
+    : _Playstation((-1,2,-3,0)),
+
+    'SHANWAN Android Gamepad'
+    : _Playstation((-1,2,-3,0)),
+
+    'MY-POWER CO.,LTD. 2In1 USB Joystick'
+    : _Playstation((-1,2,-3,0)),
+
+    'Sony Interactive Entertainment Wireless Controller'
+    : _Playstation((-1,3,-4,0)),
+
+    'Logitech Extreme 3D'                                
+    : _GameController((-2,0,-1,3), 0),
+
+    'Logitech Logitech Extreme 3D'                       
+    : _GameController((-3,0,-1,2), 0),
+
+    'FrSky Taranis Joystick'                             
+    : _RcTransmitter((0,1,2,5), 3),
+
+    'FrSky FrSky Taranis Joystick'                       
+    : _RcTransmitter((0,1,2,3), 5),
+
+    'SPEKTRUM RECEIVER'                                  
+    : _RcTransmitter((1,2,5,0), 4),
+
+    'Horizon Hobby SPEKTRUM RECEIVER'                    
+    : _RcTransmitter((1,2,3,0), 4)
+}
 
 
 def get_controller():
