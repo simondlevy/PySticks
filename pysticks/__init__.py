@@ -84,30 +84,6 @@ class _GameController(Controller):
             self.button_is_down = False
         return self.switch_value
 
-class _SpringyThrottleController(_GameController):
-
-    def __init__(self, axis_map, button_id):
-
-        _GameController.__init__(self, axis_map, button_id)
-        
-        self.throttleval = -1
-
-        self.prevtime = 0
-
-    def getThrottle(self):
-
-        currtime = time.time()
-
-        # Scale throttle increment by time difference from last update
-        self.throttleval += self._getAxis(0) * (currtime-self.prevtime)
-
-        # Constrain throttle to [-1,+1]
-        self.throttleval = min(max(self.throttleval, -1), +1)
-
-        self.prevtime = currtime
-
-        return self.throttleval
-
 class _RcTransmitter(Controller):
 
     def __init__(self, axis_map, aux_id):
@@ -119,11 +95,11 @@ class _RcTransmitter(Controller):
 
         return +1 if self.joystick.get_axis(self.aux_id) > 0 else -1
         
-class _Xbox360(_SpringyThrottleController):
+class _Xbox360(_GameController):
 
     def __init__(self, axes, aux):
 
-        _SpringyThrottleController.__init__(self, axes, None)
+        _GameController.__init__(self, axes, None)
 
         self.aux = aux
 
@@ -131,11 +107,11 @@ class _Xbox360(_SpringyThrottleController):
 
         return self.joystick.get_axis(self.aux) < -.5
 
-class _Playstation(_SpringyThrottleController):
+class _Playstation(_GameController):
 
     def __init__(self, axes):
 
-        _SpringyThrottleController.__init__(self, axes, 7)
+        _GameController.__init__(self, axes, 7)
         
 
 # Different OSs have different names for the same controller, so we don't
