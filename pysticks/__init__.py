@@ -135,7 +135,7 @@ controllers = {
     _Playstation((-1, 2, -3, 0)),
 
     'MY-POWER CO.,LTD. 2In1 USB Joystick':
-    _Playstation((-1, 2, -3, 0)),
+    _GameController((-1, 2, -3, 0), 5),
 
     'Sony Interactive Entertainment Wireless Controller':
     _Playstation((-1, 3, -4, 0)),
