@@ -152,6 +152,9 @@ controllers = {
     'FrSky FrSky Taranis Joystick':
     _RcTransmitter((0, 1, 2, 3), 5),
 
+    'FrSky Simulator':
+    _RcTransmitter((0, 1, 2, 3), 4),
+
     'SPEKTRUM RECEIVER':
     _RcTransmitter((1, 2, 3, 0), 4),
 
