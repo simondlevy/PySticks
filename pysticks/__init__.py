@@ -141,7 +141,7 @@ controllers = {
     _Playstation((-1, 3, -4, 0)),
 
     'Logitech Extreme 3D':
-    _GameController((-2, 0, -1, 3), 0),
+    _GameController((-3, 0, -1, 2), 0),
 
     'Logitech Logitech Extreme 3D':
     _GameController((-3, 0, -1, 2), 0),
