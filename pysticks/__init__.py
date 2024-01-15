@@ -119,6 +119,9 @@ controllers = {
     'Rock Candy Gamepad for Xbox 360':
     _Xbox360((-1, 3, -4, 0), 5),
 
+    'Controller (Gamepad F310)':
+    _GameController((-1, 2, -3, 0), 5),
+
     'Logitech Gamepad F310':
     _GameController((-1, 3, -4, 0), 5),
 
