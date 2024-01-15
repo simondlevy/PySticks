@@ -126,7 +126,7 @@ controllers = {
     _GameController((-1, 3, -4, 0), 5),
 
     '2In1 USB Joystick':
-    _Playstation((-1, 2, -3, 0)),
+    _GameController((-1, 2, -3, 0), 5),
 
     'Wireless Controller':
     _Playstation((-1, 2, -3, 0)),
