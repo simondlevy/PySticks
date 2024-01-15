@@ -153,7 +153,7 @@ controllers = {
     _RcTransmitter((0, 1, 2, 3), 5),
 
     'SPEKTRUM RECEIVER':
-    _RcTransmitter((1, 2, 5, 0), 4),
+    _RcTransmitter((1, 2, 3, 0), 4),
 
     'Horizon Hobby SPEKTRUM RECEIVER':
     _RcTransmitter((1, 2, 3, 0), 4)
